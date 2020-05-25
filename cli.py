@@ -20,7 +20,7 @@ def recognize(language, model, response_type, filename):
 
     config = {
         'language': language,
-        'model': model, # FarField
+        'model': model,
         'encoding': enums.AudioEncoding.WAV,
         'response_type': response_type
     }

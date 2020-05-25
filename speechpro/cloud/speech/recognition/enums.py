@@ -14,3 +14,9 @@ class Language(enum.IntEnum):
     EN = 2
     ES = 3
     KZ = 4
+
+
+class ResponseType(enum.Enum):
+    PLAIN_TEXT = 'plaintext'
+    WORD_LIST = 'wordlist'
+    MULTICHANNEL = 'multichannel'
