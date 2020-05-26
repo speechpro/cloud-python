@@ -10,7 +10,14 @@ with open('README.rst') as readme_file:
 with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
-requirements = ['Click>=7.0', ]
+requirements = [
+    'Click>=7.0',
+    'certifi>=14.05.14',
+    'six>=1.10',
+    'python_dateutil>=2.5.3',
+    'setuptools>=21.0.0',
+    'urllib3>=1.15.1'
+]
 
 setup_requirements = [ ]
 
@@ -47,7 +54,7 @@ setup(
     setup_requires=setup_requirements,
     test_suite='tests',
     tests_require=test_requirements,
-    url='https://github.com/hiisi13/speechpro',
+    url='https://github.com/speechpro/cloud-python',
     version='0.1.0',
     zip_safe=False,
 )
