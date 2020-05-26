@@ -34,7 +34,7 @@ setup(
     description="Python Boilerplate contains all the boilerplate you need to create a Python package.",
     entry_points={
         'console_scripts': [
-            'speechpro=speechpro.cli:main',
+            'speechpro=speechpro.cli:cli',
         ],
     },
     install_requires=requirements,
