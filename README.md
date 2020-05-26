@@ -48,3 +48,8 @@ speechpro recognize-word-list --model GENERAL --filename //path_to_audio
 
 ## Полная документация API
 Полная документация API распознавания речи доступна на сайте Облака ЦРТ по адресу https://cp.speechpro.com/doc/asr
+
+## TODO
+* Добавить оставшиеся методы API распознавания речи
+* Добавить методы API синтеза речи
+* Больше примеров
