@@ -10,7 +10,7 @@ with open('README.rst') as readme_file:
 with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
-requirements = [ ]
+requirements = ['Click>=7.0', ]
 
 setup_requirements = [ ]
 
@@ -42,7 +42,7 @@ setup(
     long_description=readme + '\n\n' + history,
     include_package_data=True,
     keywords='speechpro',
-    name='speechpro',
+    name='speechpro-cloud-python',
     packages=find_packages(include=['speechpro', 'speechpro.*']),
     setup_requires=setup_requirements,
     test_suite='tests',
