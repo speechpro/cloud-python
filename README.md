@@ -26,7 +26,7 @@ recognitionClient = RecognitionClient(
     os.environ['SPEECHPRO_PASSWORD']
 )
 
-with open('pepsi16kHz.wav', "rb") as f:
+with open('path_to_wav_file', "rb") as f:
     content = f.read()
 
 config = {
