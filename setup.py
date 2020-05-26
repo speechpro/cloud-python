@@ -38,7 +38,7 @@ setup(
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
     ],
-    description="Python Boilerplate contains all the boilerplate you need to create a Python package.",
+    description="Python клиент для API распознавания и синтеза речи Облака ЦРТ",
     entry_points={
         'console_scripts': [
             'speechpro=speechpro.cli:cli',

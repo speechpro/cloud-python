@@ -16,7 +16,7 @@ Speechpro Cloud Python
 
 
 
-Python Boilerplate contains all the boilerplate you need to create a Python package.
+Python клиент для API распознавания и синтеза речи Облака ЦРТ.
 
 
 * Free software: MIT license
