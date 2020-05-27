@@ -1,4 +1,4 @@
-from speechpro.cloud.speech.recognition.rest.cloud_client import SessionApi, AuthRequestDto
+from speechpro.cloud.speech.common.rest.cloud_client import SessionApi, AuthRequestDto
 
 
 class SpeechproApiClientBase:
