@@ -21,7 +21,7 @@ import os
 from speechpro.cloud.speech.recognition import RecognitionClient
 from speechpro.cloud.speech.recognition import enums
 
-recognitionClient = RecognitionClient(
+сlient = RecognitionClient(
     os.environ['SPEECHPRO_USERNAME'],
     os.environ['SPEECHPRO_DOMAIN_ID'],
     os.environ['SPEECHPRO_PASSWORD']
@@ -37,7 +37,7 @@ config = {
     'response_type': enums.ResponseType.WORD_LIST,
 }
 
-word_list = recognitionClient.recognize(config, content)
+word_list = сlient.recognize(config, content)
 for w in word_list:
     print(w.word)
 ```
@@ -56,14 +56,14 @@ speechpro recognize-word-list --model GENERAL --filename //path_to_audio
 import os
 from speechpro.cloud.speech import synthesis
 
-synthesisClient = synthesis.SynthesisClient(
+сlient = synthesis.SynthesisClient(
     os.environ['SPEECHPRO_USERNAME'],
     os.environ['SPEECHPRO_DOMAIN_ID'],
     os.environ['SPEECHPRO_PASSWORD']
 )
 
 text = 'Привет, я - синтезированный голос от компании ЦРТ'
-audio = synthesisClient.synthesize(synthesis.enums.Voice.JULIA, synthesis.enums.PlaybackProfile.SPEAKER, text)
+audio = сlient.synthesize(synthesis.enums.Voice.JULIA, synthesis.enums.PlaybackProfile.SPEAKER, text)
 
 with open('output.wav', 'wb') as f:
     f.write(audio)
@@ -79,5 +79,5 @@ speechpro synthesize --voice JULIA --input "Привет, я - синтезир�
 
 ## TODO
 * Добавить оставшиеся методы API распознавания речи
-* Добавить методы API синтеза речи
+* Описания моделей и голосов
 * Больше примеров
