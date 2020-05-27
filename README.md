@@ -53,6 +53,7 @@ speechpro recognize-word-list --model GENERAL --filename //path_to_audio
 ## Синтез речи
 Код для синтеза текста голосом *Юлия* выглядит следующим образом:
 ```python
+import os
 from speechpro.cloud.speech import synthesis
 
 synthesisClient = synthesis.SynthesisClient(
