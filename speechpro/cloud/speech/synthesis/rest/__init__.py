@@ -11,6 +11,12 @@ class BatchSynthesisClient:
         (enums.Voice.ANNA, enums.PlaybackProfile.PHONE_CALL): 'Anna_8000n',
         (enums.Voice.JULIA, enums.PlaybackProfile.SPEAKER): 'Julia_n',
         (enums.Voice.JULIA, enums.PlaybackProfile.PHONE_CALL): 'Julia_8000n',
+        (enums.Voice.DASHA, enums.PlaybackProfile.SPEAKER): 'Dasha_n',
+        (enums.Voice.DASHA, enums.PlaybackProfile.PHONE_CALL): 'Dasha_8000n',
+        (enums.Voice.ASEL, enums.PlaybackProfile.SPEAKER): 'Asel_n',
+        (enums.Voice.ASEL, enums.PlaybackProfile.PHONE_CALL): 'Asel_8000n',
+        (enums.Voice.CAROL, enums.PlaybackProfile.SPEAKER): 'Carol_n',
+        (enums.Voice.CAROL, enums.PlaybackProfile.PHONE_CALL): 'Carol_8000n',
     }
 
 
