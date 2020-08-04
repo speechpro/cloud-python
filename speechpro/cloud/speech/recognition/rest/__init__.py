@@ -7,6 +7,7 @@ from speechpro.cloud.speech.recognition import enums
 
 
 CONFIG_MODEL_KEY = 'model'
+CONFIG_LANGUAGE_KEY = 'language'
 
 
 class ShortAudioRecognitionClient():
@@ -19,6 +20,12 @@ class ShortAudioRecognitionClient():
         (enums.Language.ES, enums.Model.PHONE_CALL): 'TelecomEsp'
     }
 
+    def validate_enum_value(self, config, key, enum_type):
+        try:
+            return config[key] if isinstance(config[key], enum_type) else enum_type[config[key]]
+        except:
+            raise ValueError(f"{enum_type.__name__} is not provided or does not exist. Available models: {', '.join([m.name for m in enum_type])}")
+
 
     def recognize(self, config, audio):
         b64encoded_audio = base64.standard_b64encode(audio)
@@ -27,17 +34,9 @@ class ShortAudioRecognitionClient():
         recognize_api = RecognizeApi()
         audio_file = AudioFileDto(audio_str, config.get('encoding', enums.AudioEncoding.WAV).value)
 
-        try:
-            model = config[CONFIG_MODEL_KEY] \
-                        if isinstance(config[CONFIG_MODEL_KEY], enums.Model) \
-                        else enums.Model[config[CONFIG_MODEL_KEY]]
-        except:
-            raise ValueError(f"Model is not provided or does not exist. Available models: {' '.join([m.name for m in enums.Model])}")
-
-        try:
-            mapped_model = self.model_mapping[(config.get('language', enums.Language.RU), model)]
-        except:
-            raise ValueError('Provided language is not supported')
+        model = self.validate_enum_value(config, CONFIG_MODEL_KEY, enums.Model)
+        language = self.validate_enum_value(config, CONFIG_LANGUAGE_KEY, enums.Language)
+        mapped_model = self.model_mapping[(language, model)]
 
         recognition_request = RecognitionRequestDto(
             audio_file, mapped_model
