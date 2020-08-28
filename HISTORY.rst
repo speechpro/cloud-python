@@ -2,6 +2,11 @@
 History
 =======
 
+0.1.8 (2020-08-28)
+------------------
+
+* Add session status check to avoid 401 responses after a period of inactivity.
+
 0.1.7 (2020-08-04)
 ------------------
 
