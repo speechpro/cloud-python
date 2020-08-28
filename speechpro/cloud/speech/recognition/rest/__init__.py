@@ -1,4 +1,6 @@
 import base64
+import enum
+from typing import Any, Dict, Tuple
 
 from speechpro.cloud.speech.recognition.rest.cloud_client.api import RecognizeApi
 from speechpro.cloud.speech.recognition.rest.cloud_client.models import AudioFileDto, RecognitionRequestDto, AdvancedRecognitionRequestDto
@@ -12,7 +14,7 @@ CONFIG_LANGUAGE_KEY = 'language'
 
 class ShortAudioRecognitionClient():
 
-    model_mapping = {
+    model_mapping: Dict[Tuple[enums.Language, enums.Model], str] = {
         (enums.Language.RU, enums.Model.GENERAL): 'FarField',
         (enums.Language.RU, enums.Model.PHONE_CALL): 'TelecomRus',
         (enums.Language.KZ, enums.Model.PHONE_CALL): 'TelecomKz',
@@ -20,14 +22,14 @@ class ShortAudioRecognitionClient():
         (enums.Language.ES, enums.Model.PHONE_CALL): 'TelecomEsp'
     }
 
-    def validate_enum_value(self, config, key, enum_type):
+    def validate_enum_value(self, config: Dict[str, Any], key: str, enum_type: enum.EnumMeta):
         try:
             return config[key] if isinstance(config[key], enum_type) else enum_type[config[key]]
         except:
             raise ValueError(f"{enum_type.__name__} is not provided or does not exist. Available models: {', '.join([m.name for m in enum_type])}")
 
 
-    def recognize(self, config, audio):
+    def recognize(self, config: Dict[str, Any], audio: bytes) -> Any:
         b64encoded_audio = base64.standard_b64encode(audio)
         audio_str = str(b64encoded_audio, 'ascii', 'ignore')
 
