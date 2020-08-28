@@ -1,4 +1,5 @@
 import base64
+from typing import Union
 
 from speechpro.cloud.speech.synthesis.rest.cloud_client import Synthesize, SynthesizeRequest, SynthesizeText
 from speechpro.cloud.speech.synthesis import enums
@@ -24,7 +25,7 @@ class BatchSynthesisClient:
         return value if isinstance(value, enum_type) else enum_type[value]
 
 
-    def synthesize(self, voice, profile, text):
+    def synthesize(self, voice: Union[enums.Voice, str], profile: Union[enums.PlaybackProfile, str], text: str):
         try:
             voice = self.get_enum_value(voice, enums.Voice)
             profile = self.get_enum_value(profile, enums.PlaybackProfile)
