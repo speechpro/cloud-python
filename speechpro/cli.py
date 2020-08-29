@@ -7,17 +7,9 @@ from speechpro.cloud.speech import recognition
 from speechpro.cloud.speech import synthesis
 
 
-recognitionClient = recognition.RecognitionClient(
-    os.environ['SPEECHPRO_USERNAME'],
-    os.environ['SPEECHPRO_DOMAIN_ID'],
-    os.environ['SPEECHPRO_PASSWORD']
-)
+recognitionClient = recognition.RecognitionClient()
 
-synthesisClient = synthesis.SynthesisClient(
-    os.environ['SPEECHPRO_USERNAME'],
-    os.environ['SPEECHPRO_DOMAIN_ID'],
-    os.environ['SPEECHPRO_PASSWORD']
-)
+synthesisClient = synthesis.SynthesisClient()
 
 
 def recognize(language, model, response_type, filename, audio_channel_count=1):

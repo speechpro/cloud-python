@@ -16,7 +16,8 @@ requirements = [
     'six>=1.10',
     'python_dateutil>=2.5.3',
     'setuptools>=21.0.0',
-    'urllib3>=1.15.1'
+    'urllib3>=1.15.1',
+    'toml==0.10.1'
 ]
 
 setup_requirements = [ ]
