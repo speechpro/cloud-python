@@ -19,7 +19,9 @@ class ShortAudioRecognitionClient():
         (enums.Language.RU, enums.Model.PHONE_CALL): 'TelecomRus',
         (enums.Language.KZ, enums.Model.PHONE_CALL): 'TelecomKz',
         (enums.Language.EN, enums.Model.PHONE_CALL): 'TelecomEngUs',
-        (enums.Language.ES, enums.Model.PHONE_CALL): 'TelecomEsp'
+        (enums.Language.ES, enums.Model.PHONE_CALL): 'TelecomEsp',
+        (enums.Language.ES, enums.Model.GENERAL): 'FarFieldEsp',
+        (enums.Language.EN, enums.Model.GENERAL): 'FarFieldEng',
     }
 
     def validate_enum_value(self, config: Dict[str, Any], key: str, enum_type: enum.EnumMeta):
